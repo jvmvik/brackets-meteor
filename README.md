@@ -17,6 +17,7 @@ Open a meteor project then se the new added menu `Meteor`.
 
 ## Installation
 
+__Not available yet because of a bug in the brackets repository__
 Use the extension manager (File > Extension Manager) and search for `meteor`.
 There you can install `Meteor`.
 
