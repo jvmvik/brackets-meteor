@@ -3,7 +3,7 @@
   "title": "Meteor integration",
   "description": "Launch meteor from Brackets.",
   "homepage": "https://github.com/jvmvik/brackets-meteor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "engines": {
     "brackets": ">=1.5"

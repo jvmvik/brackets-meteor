@@ -329,13 +329,18 @@ define(function (require, exports, module) {
     var EXEC_CMD_ID = "brackets-meteor.exec",
         RUN_METEOR_CMD_ID = "brackets-meteor.run",
         DEBUG_METEOR_CMD_ID = "brackets-meteor.debug",
-        CONFIG_CMD_ID = "brackets-meteor.config";
+        CONFIG_CMD_ID = "brackets-meteor.config",
+        STOP_METEOR_CMD_ID = "brackets-meteor.stop";
     
     CommandManager.register("Run", RUN_METEOR_CMD_ID, function () {
         ConnectionManager.newMeteor("run");
     });
     CommandManager.register("Debug", DEBUG_METEOR_CMD_ID, function () {
         ConnectionManager.newMeteor("debug");
+    });
+    CommandManager.register("Stop", STOP_METEOR_CMD_ID, function () {
+        ConnectionManager.exit();
+        Panel.hide();
     });
     
     CommandManager.register("Run..", EXEC_CMD_ID, function() {
@@ -348,6 +353,7 @@ define(function (require, exports, module) {
 
     MeteorMenu.addMenuItem(RUN_METEOR_CMD_ID, "Alt-R");
     MeteorMenu.addMenuItem(DEBUG_METEOR_CMD_ID, "Alt-D");
+    MeteorMenu.addMenuItem(STOP_METEOR_CMD_ID, "Alt-C");
     MeteorMenu.addMenuDivider();
     MeteorMenu.addMenuItem(EXEC_CMD_ID, "Alt-X");
     MeteorMenu.addMenuDivider();
